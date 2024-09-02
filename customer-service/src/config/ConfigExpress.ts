@@ -11,7 +11,7 @@ class ConfigExpress {
             ? process.env.NODE_ENV
             : ''
 
-        const envFilePath = environment ? ['.env', '.env.test', `.env.${environment}`] : ''
+        const envFilePath = environment ? ['.env', `.env.${environment}`] : ''
         dotenv.config({path: envFilePath, override: true})
     }
 
