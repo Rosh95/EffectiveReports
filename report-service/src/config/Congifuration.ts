@@ -11,7 +11,7 @@ class Configuration {
             ? process.env.NODE_ENV
             : ''
 
-        const envFilePath = environment ? ['.env', `.env.${environment}`] : ''
+        const envFilePath = environment ? ['.env.test', `.env.${environment}`] : ''
         dotenv.config({path: envFilePath, override: true})
     }
 

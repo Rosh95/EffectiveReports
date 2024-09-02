@@ -1,12 +1,11 @@
 import express from 'express';
 import cors from 'cors';
-import dotenv from 'dotenv';
 import reportDataRoutes from './routes/reportData';
+import ConfigExpress from "./config/ConfigExpress";
 
-dotenv.config();
-
+const config = ConfigExpress.getConfiguration();
 const app = express();
-const PORT = process.env.PORT || 3002;
+const PORT = config.PORT || 3005;
 
 app.use(cors());
 app.use(express.json());
